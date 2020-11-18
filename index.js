@@ -1,8 +1,12 @@
 function pageTransition()
 {
 	var tl = gsap.timeline();
-	tl.to('ul.transition li', {duration: .5, scaleY: 1, transformOrigin: 'bottom right', stagger: .2});
-	tl.to('ul.transition li', {duration: 0.5, scaleY: 0, stagger: .1, delay: 0.1,  transformOrigin: 'bottom right'});
+
+	tl.to('ul.transition .overlay', {duration: 1, width: '100%', display: 'block' });
+	tl.to('ul.transition .overlay', {duration: 2, delay: 0.1, x: 6000});
+	tl.to('ul.transition .overlay', {duration: 0.1,display: 'none'});
+	tl.to('ul.transition .overlay', {duration: 0.1,x: 0, width: '0%'});
+	
 }
 
 function contentAnimation()
@@ -31,7 +35,7 @@ barba.init({
 		{
 			
 			pageTransition();
-			await delay(1500);
+			await delay(3);
 		
 		
 		},
